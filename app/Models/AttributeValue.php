@@ -40,4 +40,5 @@ class AttributeValue extends Model
     {
         return $this->belongsToMany(ProductAttribute::class);
     }
+
 }
