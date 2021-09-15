@@ -47,7 +47,7 @@ import VueSwal from 'vue-swal';
 Vue.use(VueSwal);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('attribute-values', require('./components/AttributeValues.vue').default);
+Vue.component('product-detail', require('./components/ProductDetail.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -55,5 +55,8 @@ Vue.component('attribute-values', require('./components/AttributeValues.vue').de
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#site',
+    created: function() {
+        console.log('Site Loaded');
+    }
 });

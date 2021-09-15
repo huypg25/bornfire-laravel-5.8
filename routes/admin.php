@@ -21,5 +21,19 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::get('/{id}/delete', 'Admin\CategoryController@delete')->name('admin.categories.delete');
 
         });
+        Route::group(['prefix'  =>   'attributes'], function() {
+
+            Route::get('/', 'Admin\AttributeController@index')->name('admin.attributes.index');
+            Route::get('/create', 'Admin\AttributeController@create')->name('admin.attributes.create');
+            Route::post('/store', 'Admin\AttributeController@store')->name('admin.attributes.store');
+            Route::get('/{id}/edit', 'Admin\AttributeController@edit')->name('admin.attributes.edit');
+            Route::post('/update', 'Admin\AttributeController@update')->name('admin.attributes.update');
+            Route::get('/{id}/delete', 'Admin\AttributeController@delete')->name('admin.attributes.delete');
+
+            Route::post('/get-values', 'Admin\AttributeValueController@getValues');
+            Route::post('/add-values', 'Admin\AttributeValueController@addValues');
+            Route::post('/update-values', 'Admin\AttributeValueController@updateValues');
+            Route::post('/delete-values', 'Admin\AttributeValueController@deleteValues');
+        });
     });
 });
