@@ -45,5 +45,14 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::get('/{id}/delete', 'Admin\BrandController@delete')->name('admin.brands.delete');
 
         });
+        Route::group(['prefix' => 'products'], function () {
+
+            Route::get('/', 'Admin\ProductController@index')->name('admin.products.index');
+            Route::get('/create', 'Admin\ProductController@create')->name('admin.products.create');
+            Route::post('/store', 'Admin\ProductController@store')->name('admin.products.store');
+            Route::get('/edit/{id}', 'Admin\ProductController@edit')->name('admin.products.edit');
+            Route::post('/update', 'Admin\ProductController@update')->name('admin.products.update');
+
+        });
     });
 });
