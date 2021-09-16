@@ -1,8 +1,26 @@
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if (scroll > 1) {
+
+          $(".header-top").css("background" , "#696969");
+        }
+
+        else{
+            $(".header-top").css("background" , "none");
+        }
+    })
+  })
+
+
+
+
 // some scripts
 
 // jquery ready start
 $(document).ready(function() {
-	// jQuery code
+    // jQuery code
 
 
 
@@ -15,9 +33,9 @@ $(document).ready(function() {
     */ ///////////////////////////////////////
 
 
-	//////////////////////// Prevent closing from click inside dropdown
+    //////////////////////// Prevent closing from click inside dropdown
     $(document).on('click', '.dropdown-menu', function (e) {
-      e.stopPropagation();
+        e.stopPropagation();
     });
 
     ///////////////// fixed menu on scroll for desctop
@@ -25,22 +43,22 @@ $(document).ready(function() {
 
         $(window).scroll(function(){
             if ($(this).scrollTop() > 125) {
-                 $('.navbar-landing').addClass("fixed-top");
+                $('.navbar-landing').addClass("fixed-top");
             }else{
                 $('.navbar-landing').removeClass("fixed-top");
             }
         });
     } // end if
 
-	//////////////////////// Fancybox. /plugins/fancybox/
-	if($("[data-fancybox]").length>0) {  // check if element exists
-		$("[data-fancybox]").fancybox();
-	} // end if
+    //////////////////////// Fancybox. /plugins/fancybox/
+    if($("[data-fancybox]").length>0) {  // check if element exists
+        $("[data-fancybox]").fancybox();
+    } // end if
 
-	//////////////////////// Bootstrap tooltip
-	if($('[data-toggle="tooltip"]').length>0) {  // check if element exists
-		$('[data-toggle="tooltip"]').tooltip()
-	} // end if
+    //////////////////////// Bootstrap tooltip
+    if($('[data-toggle="tooltip"]').length>0) {  // check if element exists
+        $('[data-toggle="tooltip"]').tooltip()
+    } // end if
 
     /////////////////////// Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a.page-scroll').click(function() {
@@ -59,10 +77,10 @@ $(document).ready(function() {
         $('.slick-slider').slick();
     } // end if
 
-	/////////////////  items carousel. /plugins/owlcarousel/
+    /////////////////  items carousel. /plugins/owlcarousel/
     if ($('.owl-init').length > 0) { // check if element exists
 
-       $(".owl-init").each(function(){
+        $(".owl-init").each(function(){
 
             var myOwl = $(this);
             var data_items = myOwl.data('items');
@@ -81,7 +99,7 @@ $(document).ready(function() {
                 items: data_items,
                 autoHeight: true,
                 navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-                 //items: 4,
+                //items: 4,
                 responsive: {
                     0: {
                         items: 1
