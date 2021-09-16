@@ -1,6 +1,4 @@
 <?php
-require 'admin.php';
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +10,9 @@ require 'admin.php';
 |
 */
 
+Route::get('/','Site\CategoryController@index' );
+Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
+
 Auth::routes();
-Route::view('/', 'site.pages.homepage');
+require 'admin.php';
+

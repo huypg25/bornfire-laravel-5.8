@@ -6,10 +6,12 @@ namespace App\Models;
 use App\Traits\UploadAble;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use TypiCMS\NestableTrait;
 
 class Category extends Model
 {
     use UploadAble;
+    use NestableTrait;
 
     /**
      * @var string

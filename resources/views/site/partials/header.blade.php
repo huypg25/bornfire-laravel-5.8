@@ -25,8 +25,10 @@
                           data-inline="false"
                       ></span>
                                 <div class="dropdown-nav">
-                                    <a href="#">Page</a>
-                                    <a href="#">About</a>
+                                    @foreach($categories as $cat)
+                                        <a href="{{ route('category.show', $cat->slug) }}" id="{{ $cat->slug }}">{{ $cat->name }}</a>
+                                    @endforeach
+
                                 </div>
 
                             </li>
@@ -44,7 +46,11 @@
                                     @else
                                         <a href="#">My Account</a>
                                         <a href="#">My Order</a>
-                                        <a href="#">Logout</a>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
                                     @endguest
                                 </div>
                             </li>

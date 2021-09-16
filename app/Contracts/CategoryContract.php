@@ -38,4 +38,13 @@ interface CategoryContract
      * @return bool
      */
     public function deleteCategory($id);
+    /**
+     * @return mixed
+     */
+    public function treeList();
+/**
+* @param $slug
+* @return mixed
+*/
+    public function findBySlug($slug);
 }
