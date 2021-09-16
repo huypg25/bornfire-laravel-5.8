@@ -1,0 +1,18 @@
+
+.cols (@_number){
+    width: @_number;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+.trans (@_x,@_y){
+-webkit-transform: translate(@_x,@_y);
+-ms-transform: translate(@_x,@_y);
+    transform: translate(@_x,@_y);
+}
+.transY (@_y){
+    -webkit-transform: translateY(@_y);
+    -ms-transform: translateY(@_y);
+        transform: translateY(@_y);
+}
+    
