@@ -167,7 +167,7 @@ export default {
                     _this.currentPrice = '';
                     _this.valueSelected = false;
                 }).catch(function (error) {
-                    console.log(error);
+                    console.log(error.response);
                 });
                 this.loadProductAttributes(this.productid);
             }
