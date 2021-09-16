@@ -26,8 +26,18 @@
                       ></span>
                                 <div class="dropdown-nav">
                                     @foreach($categories as $cat)
-                                        <a href="{{ route('category.show', $cat->slug) }}" id="{{ $cat->slug }}">{{ $cat->name }}</a>
+                                        @foreach($cat->items as $category)
+                                            @if ($category->items->count() > 0)
+
+                                                <a href="{{route('product.show',$category->slug)}}" id="{{$category->slug}}">{{ $category->name }}</a>
+
+                                            @else
+                                                <a  href="{{ route('product.show', $category->slug) }}">{{ $category->name }}</a>
+                                            @endif
+                                        @endforeach
                                     @endforeach
+
+
 
                                 </div>
 

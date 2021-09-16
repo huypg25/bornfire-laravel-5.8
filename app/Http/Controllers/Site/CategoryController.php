@@ -14,15 +14,10 @@ class CategoryController extends Controller
     {
         $this->categoryRepository = $categoryRepository;
     }
-public  function index(){
-    $categories = $this->categoryRepository->listCategories();
-    return view('site.pages.homepage', compact('categories'));
-}
     public function show($slug)
     {
         $category = $this->categoryRepository->findBySlug($slug);
-
-        dd($category);
-        // return view('site.pages.category', compact('category')); we will add this in the next post
+//dd($category);
+        return view('site.pages.category', compact('category'));
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 use App\Models\Product;
@@ -64,14 +65,12 @@ class ProductRepository extends BaseRepository implements ProductContract
     {
         try {
             $collection = collect($params);
-
             $featured = $collection->has('featured') ? 1 : 0;
             $status = $collection->has('status') ? 1 : 0;
-
             $merge = $collection->merge(compact('status', 'featured'));
 
             $product = new Product($merge->all());
-
+//            dd($product);
             $product->save();
 
             if ($collection->has('categories')) {
@@ -119,5 +118,18 @@ class ProductRepository extends BaseRepository implements ProductContract
         $product->delete();
 
         return $product;
+    }
+
+    /**
+     * @param $slug
+     * @return mixed
+     */
+    public function findProductBySlug($slug)
+    {
+//dd(Product::where('slug', 'asd') ->first());
+
+        return Product::where('slug', $slug) ->first();
+
+
     }
 }

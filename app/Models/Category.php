@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-
-use App\Traits\UploadAble;
+use App\Models\Product;
+use TypiCMS\NestableTrait;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-use TypiCMS\NestableTrait;
 
 class Category extends Model
 {
-    use UploadAble;
     use NestableTrait;
 
     /**
@@ -66,5 +64,4 @@ class Category extends Model
     {
         return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id');
     }
-
 }

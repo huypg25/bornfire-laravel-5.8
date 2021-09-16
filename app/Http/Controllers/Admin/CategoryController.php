@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use App\Contracts\CategoryContract;
 use App\Http\Controllers\BaseController;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers\Admin
+ */
 class CategoryController extends BaseController
 {
     /**
@@ -33,17 +36,18 @@ class CategoryController extends BaseController
         $this->setPageTitle('Categories', 'List of all categories');
         return view('admin.categories.index', compact('categories'));
     }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-//        $categories = $this->categoryRepository->listCategories('id', 'asc');
         $categories = $this->categoryRepository->treeList();
 
         $this->setPageTitle('Categories', 'Create Category');
         return view('admin.categories.create', compact('categories'));
     }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -66,6 +70,7 @@ class CategoryController extends BaseController
         }
         return $this->responseRedirect('admin.categories.index', 'Category added successfully' ,'success',false, false);
     }
+
     /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -73,12 +78,12 @@ class CategoryController extends BaseController
     public function edit($id)
     {
         $targetCategory = $this->categoryRepository->findCategoryById($id);
-//        $categories = $this->categoryRepository->listCategories();
         $categories = $this->categoryRepository->treeList();
 
         $this->setPageTitle('Categories', 'Edit Category : '.$targetCategory->name);
         return view('admin.categories.edit', compact('categories', 'targetCategory'));
     }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -101,6 +106,7 @@ class CategoryController extends BaseController
         }
         return $this->responseRedirectBack('Category updated successfully' ,'success',false, false);
     }
+
     /**
      * @param $id
      * @return \Illuminate\Http\RedirectResponse

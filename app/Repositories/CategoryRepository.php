@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 use App\Models\Category;
@@ -17,6 +18,7 @@ use Doctrine\Instantiator\Exception\InvalidArgumentException;
 class CategoryRepository extends BaseRepository implements CategoryContract
 {
     use UploadAble;
+
     /**
      * CategoryRepository constructor.
      * @param Category $model
@@ -26,6 +28,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
         parent::__construct($model);
         $this->model = $model;
     }
+
     /**
      * @param string $order
      * @param string $sort
@@ -36,6 +39,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
     {
         return $this->all($columns, $order, $sort);
     }
+
     /**
      * @param int $id
      * @return mixed
@@ -50,7 +54,9 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
             throw new ModelNotFoundException($e);
         }
+
     }
+
     /**
      * @param array $params
      * @return Category|mixed
@@ -81,6 +87,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
             throw new InvalidArgumentException($exception->getMessage());
         }
     }
+
     /**
      * @param array $params
      * @return mixed
@@ -109,6 +116,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         return $category;
     }
+
     /**
      * @param $id
      * @return bool|mixed
@@ -125,6 +133,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         return $category;
     }
+
     /**
      * @return mixed
      */
@@ -133,8 +142,10 @@ class CategoryRepository extends BaseRepository implements CategoryContract
         return Category::orderByRaw('-name ASC')
             ->get()
             ->nest()
+            ->setIndent('|–– ')
             ->listsFlattened('name');
     }
+
     public function findBySlug($slug)
     {
         return Category::with('products')
