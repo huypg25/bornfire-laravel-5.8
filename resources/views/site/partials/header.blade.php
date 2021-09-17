@@ -9,13 +9,13 @@
                     <nav>
                         <ul>
                             <li>
-                                <a class="i-cart" href="#"
+                                <a class="i-cart" href="{{route('checkout.cart')}}"
                                 ><span
                                         class="iconify"
                                         data-icon="ion-ios-cart-outline"
                                         data-inline="false"
                                     ></span>
-                                    <span class="badge" id="lblCartCount">2</span>
+                                    <span class="badge" id="lblCartCount">{{ $cartCount }} </span>
                                 </a>
                             </li>
                             <li class="iconNav">
@@ -29,10 +29,10 @@
                                         @foreach($cat->items as $category)
                                             @if ($category->items->count() > 0)
 
-                                                <a href="{{route('product.show',$category->slug)}}" id="{{$category->slug}}">{{ $category->name }}</a>
+                                                <a href="{{route('category.show',$category->slug)}}" id="{{$category->slug}}">{{ $category->name }}</a>
 
                                             @else
-                                                <a  href="{{ route('product.show', $category->slug) }}">{{ $category->name }}</a>
+                                                <a  href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
                                             @endif
                                         @endforeach
                                     @endforeach

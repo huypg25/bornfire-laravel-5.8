@@ -1,6 +1,20 @@
 @extends('site.app')
 @section('title', $category->name)
 @section('content')
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/ui.css') }}" />
+
+    <style>
+        header {
+            background-repeat: no-repeat;
+            background-image: none;
+            height: auto;
+            background-color: grey ;
+            max-height: none;
+        }
+
+    </style>
     <section class="section-pagetop bg-dark">
         <div class="container clearfix">
             <h2 class="title-page">{{ $category->name }}</h2>
@@ -19,7 +33,7 @@
                                     <div class="img-wrap padding-y"><img src="https://via.placeholder.com/176" alt=""></div>
                                 @endif
                                 <figcaption class="info-wrap">
-                                    <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
+                                    <h4 class="title"><a href="{{ route('category.show', $product->slug) }}">{{ $product->name }}</a></h4>
                                 </figcaption>
                                 <div class="bottom-wrap">
                                     <a href="{{ route('product.show', $product->slug) }}" class="btn btn-sm btn-success float-right">View Details</a>

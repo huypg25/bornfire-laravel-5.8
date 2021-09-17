@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Traits\UploadAble;
 use Illuminate\Http\UploadedFile;
@@ -126,10 +127,8 @@ class ProductRepository extends BaseRepository implements ProductContract
      */
     public function findProductBySlug($slug)
     {
-//dd(Product::where('slug', 'asd') ->first());
-
-        return Product::where('slug', $slug) ->first();
 
 
+    return   Product::where('slug', $slug) ->first();
     }
 }

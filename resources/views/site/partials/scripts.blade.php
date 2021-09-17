@@ -18,3 +18,4 @@
         });
     });
 </script>
+@stack('scripts')
