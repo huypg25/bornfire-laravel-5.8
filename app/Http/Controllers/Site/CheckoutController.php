@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Site;
-
+use Cart;
 use Illuminate\Http\Request;
 use App\Contracts\OrderContract;
 use App\Http\Controllers\Controller;
@@ -25,7 +25,9 @@ class CheckoutController extends Controller
         // Before storing the order we should implement the
         // request validation which I leave it to you
         $order = $this->orderRepository->storeOrderDetails($request->all());
+//dd($order->user->email);
+        Cart::clear();
+        return view('site.pages.success');
 
-        dd($order);
     }
 }
