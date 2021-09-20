@@ -45,6 +45,18 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::get('/{id}/delete', 'Admin\BrandController@delete')->name('admin.brands.delete');
 
         });
+
+        Route::group(['prefix'  =>   'posts'], function() {
+
+            Route::get('/', 'Admin\PostController@index')->name('admin.posts.index');
+            Route::get('/create', 'Admin\PostController@create')->name('admin.posts.create');
+            Route::post('/store', 'Admin\PostController@store')->name('admin.posts.store');
+            Route::get('/{id}/edit', 'Admin\PostController@edit')->name('admin.posts.edit');
+            Route::post('/update', 'Admin\PostController@update')->name('admin.posts.update');
+            Route::get('/{id}/delete', 'Admin\PostController@delete')->name('admin.posts.delete');
+
+        });
+
         Route::group(['prefix' => 'products'], function () {
 
             Route::get('/', 'Admin\ProductController@index')->name('admin.products.index');

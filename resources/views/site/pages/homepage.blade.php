@@ -2,6 +2,9 @@
 @section('title', 'Homepage')
 
 @section('content')
+<!--    --><?php
+//dd($products->images);
+//    ?>
     <div class="header-banner">
         <div class="container">
             <div class="row">
@@ -149,25 +152,18 @@
             </div>
             <div class="list-bot">
                 <div class="row">
+                    @foreach($products as $product)
                     <div class="col-3">
                         <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-1.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
+                         <a href="{{ route('product.show', $product->slug) }}">
+                             <div class="list-img" >
+                                 @foreach($product->images as $image)
+                                     <div class="s-img">
+                                         <img src="{{ asset('storage/'.$image->full) }}" alt="" />
+                                     </div>
+                                 @endforeach
+                             </div>
+                         </a>
                             <div class="product-action-grid">
                                 <div class="add-to-cart">
                                     <a href="#">add to cart</a>
@@ -196,367 +192,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="txt-5">Kubusbowl Small</p>
-                            <p class="txt-6">$19.00</p>
+                            <p class="txt-5">{{$product->name}}</p>
+                            <p class="txt-6">{{$product->sale_price}}</p>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-2.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">Divine Footstool</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-3.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">Cache Pendant Lamp</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-4.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">RIO Chair</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-5.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">Cache Pendant Lamp</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-6.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">Prismatic table</p>
-                            <p class="txt-6">$69.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-7.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">CobraT hermo Cup</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="item">
-                            <div class="list-img">
-                                <div class="s-img">
-                                    <img src="img/item-8.jpg" alt="" />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FF0000"
-                                        alt=""
-                                    />
-                                </div>
-                                <div class="s-img">
-                                    <img
-                                        src="https://via.placeholder.com/270x320/FFFF00"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                            <div class="product-action-grid">
-                                <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <div class="action-item-box">
-                                    <div class="wishlist-btn ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-android-favorite-outline"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="compare-product ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-connection-bars"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                    <div class="quick-view ac-btn">
-                        <span
-                            class="iconify"
-                            data-icon="ion-ios-search"
-                            data-inline="false"
-                        ></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="txt-5">Montana Collection</p>
-                            <p class="txt-6">$179.00</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -565,85 +205,19 @@
         <div class="container">
             <h3>Blog update</h3>
             <div class="row">
+                @foreach($posts as $post)
                 <div class="col-4">
                     <a href="#">
                         <div class="blg">
-                            <img class="img-top" src="img/blog-1.jpg" alt="blog-1" />
+                            <img class="img-top" src="{{ asset('storage/'.$post->image) }}" alt="post-1" />
                             <div class="blg-bot">
-                                <span>JULY 14TH, 2016</span>
-                                <p>8 Things I’ve Learned from<br />8 Years of Bonfire</p>
-
-                                <div class="lv">
-                      <span
-                          class="iconify"
-                          data-icon="ion:eye"
-                          data-inline="false"
-                      ></span>
-                                    <span class="txt-7">941 Views</span>
-
-                                    <span
-                                        class="iconify"
-                                        data-icon="ion:share-social"
-                                        data-inline="false"
-                                    ></span
-                                    ><span class="txt-7">27 Likes</span>
-                                </div>
+                                <span>{{$post->created_at}}</span>
+                                <p>{{$post->description}}</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-4">
-                    <a href="#">
-                        <div class="blg">
-                            <img class="img-top" src="img/blog-2.jpg" alt="blog-2" />
-                            <div class="blg-bot">
-                                <span>JULY 14TH, 2016</span>
-                                <p>How I Stay Inspired and<br />Come Up with New Ideas</p>
-
-                                <div class="lv">
-                      <span
-                          class="iconify"
-                          data-icon="ion:eye"
-                          data-inline="false"
-                      ></span>
-                                    <span class="txt-7">941 Views</span>
-                                    <span
-                                        class="iconify"
-                                        data-icon="ion:share-social"
-                                        data-inline="false"
-                                    ></span
-                                    ><span class="txt-7">27 Likes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="#">
-                        <div class="blg">
-                            <img class="img-top" src="img/blog-3.jpg" alt="blog-3" />
-                            <div class="blg-bot">
-                                <span>JULY 14TH, 2016</span>
-                                <p>Wait, there’s a human on<br />the other end?</p>
-
-                                <div class="lv">
-                      <span
-                          class="iconify"
-                          data-icon="ion:eye"
-                          data-inline="false"
-                      ></span>
-                                    <span class="txt-7">941 Views</span>
-                                    <span
-                                        class="iconify"
-                                        data-icon="ion:share-social"
-                                        data-inline="false"
-                                    ></span
-                                    ><span class="txt-7">27 Likes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
             <div class="gt-btn"><a href="#">Go to blog</a></div>
         </div>

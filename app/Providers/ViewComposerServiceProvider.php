@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Post;
+use App\Models\Product;
 use Cart;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
@@ -21,6 +23,14 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
         View::composer('site.partials.header', function ($view) {
             $view->with('cartCount', Cart::getContent()->count());
+        });
+        View::composer('site.pages.homepage', function ($view) {
+            $view->with('products', Product::all());
+
+        });
+        View::composer('site.pages.homepage', function ($view) {
+            $view->with('posts', Post::all());
+
         });
 
     }
