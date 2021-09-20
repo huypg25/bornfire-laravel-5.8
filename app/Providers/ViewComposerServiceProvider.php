@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Brand;
 use App\Models\Post;
 use App\Models\Product;
 use Cart;
@@ -30,6 +31,10 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
         View::composer('site.pages.homepage', function ($view) {
             $view->with('posts', Post::all());
+
+        });
+        View::composer('site.pages.homepage', function ($view) {
+            $view->with('brands', Brand::all());
 
         });
 

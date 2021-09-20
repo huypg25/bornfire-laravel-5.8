@@ -207,11 +207,11 @@
             <div class="row">
                 @foreach($posts as $post)
                 <div class="col-4">
-                    <a href="#">
+                    <a href="{{ route('post.show', $post->id) }}">
                         <div class="blg">
                             <img class="img-top" src="{{ asset('storage/'.$post->image) }}" alt="post-1" />
                             <div class="blg-bot">
-                                <span>{{$post->created_at}}</span>
+                                <span>{{$post->created_at->diffForHumans()}}</span>
                                 <p>{{$post->description}}</p>
                             </div>
                         </div>
@@ -225,24 +225,11 @@
     <div class="brand">
         <div class="container">
             <div class="row">
+                @foreach($brands as $brand)
                 <div class="col-2">
-                    <div class="brd"><img src="img/brand/rolex.png" alt="" /></div>
+                    <div class="brd"><img src="{{ asset('storage/'.$brand->logo) }}" alt="" /></div>
                 </div>
-                <div class="col-2">
-                    <div class="brd"><img src="img/brand/elle.png" alt="" /></div>
-                </div>
-                <div class="col-2">
-                    <div class="brd"><img src="img/brand/john.png" alt="" /></div>
-                </div>
-                <div class="col-2">
-                    <div class="brd"><img src="img/brand/jubilee.png" alt="" /></div>
-                </div>
-                <div class="col-2">
-                    <div class="brd"><img src="img/brand/triton.png" alt="" /></div>
-                </div>
-                <div class="col-2">
-                    <div class="brd"><img src="img/brand/pandora.png" alt="" /></div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
