@@ -1,7 +1,7 @@
 
 ## REQUIREMENTS<br>
 
-PHP 7.4.23 <br>
+<strong>PHP 7.4.23 </strong><br>
 npm<br>
 nodejs<br><br>
 
@@ -33,5 +33,5 @@ chmod -R 777 /storage <br><br>
 
 
 http://127.0.0.1:8000/admin<br>
-username : admin@admin.com<br><br>
+username : admin@admin.com<br>
 password : password<br>
