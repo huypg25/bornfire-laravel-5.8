@@ -1,27 +1,27 @@
 
-## SETUP FOR LINUX
+## SETUP FOR LINUX<br>
 
-git clone https://github.com/huypg25/bornfire-laravel-5.8.git
-cd bornfire-laravel-5.8/
-php7 composer.phar install
-php7 composer.phar dump-autoload
+git clone https://github.com/huypg25/bornfire-laravel-5.8.git<br>
+cd bornfire-laravel-5.8/<br>
+php7 composer.phar install<br>
+php7 composer.phar dump-autoload<br><br>
 
-npm install cross-env
-npm run dev
+npm install cross-env<br>
+npm run dev<br><br>
 
-Create new database and change variables in .env
+Create new database and change variables in .env<br>
 
-DB_DATABASE=
-DB_USERNAME=
-DB_PASSWORD=
+DB_DATABASE=<br>
+DB_USERNAME=<br>
+DB_PASSWORD=<br><br>
 
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan storage:link
-chmod -R 777 /storage 
+php artisan key:generate<br>
+php artisan migrate<br>
+php artisan db:seed<br>
+php artisan storage:link<br>
+chmod -R 777 /storage <br><br>
 
 
-http://127.0.0.1:8000/admin
-username : admin@admin.com
-password : password
+http://127.0.0.1:8000/admin<br>
+username : admin@admin.com<br><br>
+password : password<br>
