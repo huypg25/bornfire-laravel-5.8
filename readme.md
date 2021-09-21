@@ -1,10 +1,20 @@
 
+## REQUIREMENTS<br>
+
+PHP 7.4.23 <br>
+npm<br>
+nodejs<br><br>
+
+
+
+
+
 ## SETUP FOR LINUX<br>
 
 git clone https://github.com/huypg25/bornfire-laravel-5.8.git<br>
 cd bornfire-laravel-5.8/<br>
-php7 composer.phar install<br>
-php7 composer.phar dump-autoload<br><br>
+php composer.phar install<br>
+php composer.phar dump-autoload<br><br>
 
 npm install cross-env<br>
 npm run dev<br><br>
