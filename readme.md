@@ -3,6 +3,7 @@
 
 <strong>PHP 7.4.23 </strong><br>
 npm<br>
+mysql<br>
 nodejs<br><br>
 
 
