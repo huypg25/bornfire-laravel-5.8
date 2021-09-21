@@ -1,3 +1,0 @@
-categories product foreign
-Product image UI errors: upload box , picbox
-product attribute
