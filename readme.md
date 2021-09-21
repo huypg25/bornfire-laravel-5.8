@@ -38,4 +38,4 @@ username : admin@admin.com<br>
 password : password<br>
 
 
-them^ brand product lay^' hinh` trong folder imageForUpload
+them^ brand product lay^' hinh` trong folder imageForUpload.
