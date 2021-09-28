@@ -42,4 +42,4 @@ password : password<br>
 - Add to cart, check out, send email.
 - Manager category, product, brand, post.
 ## NOTE<br>
-Thêm brand, product,post sử dụng hình trong folder imageForUpload.
+add brand, product,post use images from folder imageForUpload.
