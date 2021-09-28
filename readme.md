@@ -39,7 +39,7 @@ password : password<br>
 
 ## FEATURES<br>
 - Sign in, sign up for user
-- Add to cart and check out 
+- Add to cart, check out, send email.
 - Manager category, product, brand, post.
 ## NOTE<br>
 Thêm brand, product,post sử dụng hình trong folder imageForUpload.
