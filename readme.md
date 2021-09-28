@@ -37,5 +37,9 @@ http://127.0.0.1:8000/admin<br>
 username : admin@admin.com<br>
 password : password<br>
 
-
-them^ brand product lay^' hinh` trong folder imageForUpload.
+## FEATURES<br>
+- Sign in, sign up for user
+- Add to cart and check out 
+- Manager category, product, brand, post.
+## NOTE<br>
+Thêm brand, product,post sử dụng hình trong folder imageForUpload.
