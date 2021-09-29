@@ -26,15 +26,15 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('cartCount', Cart::getContent()->count());
         });
         View::composer('site.pages.homepage', function ($view) {
-            $view->with('products', Product::all());
+            $view->with('products', Product::take(8)->get());
 
         });
         View::composer('site.pages.homepage', function ($view) {
-            $view->with('posts', Post::all());
+            $view->with('posts', Post::take(3)->get());
 
         });
         View::composer('site.pages.homepage', function ($view) {
-            $view->with('brands', Brand::all());
+            $view->with('brands', Brand::take(6)->get());
 
         });
 

@@ -16,29 +16,18 @@ $(document).ready(function(){
 
 
 
-// some scripts
 
-// jquery ready start
 $(document).ready(function() {
     // jQuery code
 
 
 
 
-    /* ///////////////////////////////////////
 
-    THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE,
-    For sliders, interactions and other
-
-    */ ///////////////////////////////////////
-
-
-    //////////////////////// Prevent closing from click inside dropdown
     $(document).on('click', '.dropdown-menu', function (e) {
         e.stopPropagation();
     });
 
-    ///////////////// fixed menu on scroll for desctop
     if ($(window).width() > 768) {
 
         $(window).scroll(function(){

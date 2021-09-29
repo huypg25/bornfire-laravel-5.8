@@ -40,18 +40,18 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="menu" name="menu"/>Show in Menu
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Category Image</label>
-                            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
-                            @error('image') {{ $message }} @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <div class="form-check">--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input class="form-check-input" type="checkbox" id="menu" name="menu"/>Show in Menu--}}
+{{--                                </label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label class="control-label">Category Image</label>--}}
+{{--                            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>--}}
+{{--                            @error('image') {{ $message }} @enderror--}}
+{{--                        </div>--}}
                     </div>
                     <div class="tile-footer">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save Category</button>

@@ -93,7 +93,7 @@ class BrandRepository extends BaseRepository implements BrandContract
         $brand = $this->findBrandById($params['id']);
 
         $collection = collect($params)->except('_token');
-
+        $logo=null;
         if ($collection->has('logo') && ($params['logo'] instanceof  UploadedFile)) {
 
             if ($brand->logo != null) {

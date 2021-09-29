@@ -47,31 +47,31 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="menu" name="menu"
-                                        {{ $targetCategory->menu == 1 ? 'checked' : '' }}
-                                    />Show in Menu
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    @if ($targetCategory->image != null)
-                                        <figure class="mt-2" style="width: 80px; height: auto;">
-                                            <img src="{{ asset('storage/'.$targetCategory->image) }}" id="categoryImage" class="img-fluid" alt="img">
-                                        </figure>
-                                    @endif
-                                </div>
-                                <div class="col-md-10">
-                                    <label class="control-label">Category Image</label>
-                                    <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
-                                    @error('image') {{ $message }} @enderror
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <div class="form-check">--}}
+{{--                                <label class="form-check-label">--}}
+{{--                                    <input class="form-check-input" type="checkbox" id="menu" name="menu"--}}
+{{--                                        {{ $targetCategory->menu == 1 ? 'checked' : '' }}--}}
+{{--                                    />Show in Menu--}}
+{{--                                </label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-2">--}}
+{{--                                    @if ($targetCategory->image != null)--}}
+{{--                                        <figure class="mt-2" style="width: 80px; height: auto;">--}}
+{{--                                            <img src="{{ asset('storage/'.$targetCategory->image) }}" id="categoryImage" class="img-fluid" alt="img">--}}
+{{--                                        </figure>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-10">--}}
+{{--                                    <label class="control-label">Category Image</label>--}}
+{{--                                    <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>--}}
+{{--                                    @error('image') {{ $message }} @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <div class="tile-footer">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Category</button>

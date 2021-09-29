@@ -166,7 +166,7 @@
                          </a>
                             <div class="product-action-grid">
                                 <div class="add-to-cart">
-                                    <a href="#">add to cart</a>
+                                    <a href="{{ route('product.show', $product->slug) }}">add to cart</a>
                                 </div>
                                 <div class="action-item-box">
                                     <div class="wishlist-btn ac-btn">

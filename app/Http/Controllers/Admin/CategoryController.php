@@ -58,7 +58,6 @@ class CategoryController extends BaseController
         $this->validate($request, [
             'name'      =>  'required|max:191',
             'parent_id' =>  'required|not_in:0',
-            'image'     =>  'mimes:jpg,jpeg,png|max:1000'
         ]);
 
         $params = $request->except('_token');
@@ -94,7 +93,6 @@ class CategoryController extends BaseController
         $this->validate($request, [
             'name'      =>  'required|max:191',
             'parent_id' =>  'required|not_in:0',
-            'image'     =>  'mimes:jpg,jpeg,png|max:1000'
         ]);
 
         $params = $request->except('_token');
@@ -113,8 +111,13 @@ class CategoryController extends BaseController
      */
     public function delete($id)
     {
-        $category = $this->categoryRepository->deleteCategory($id);
 
+        try {
+            $category = $this->categoryRepository->deleteCategory($id);
+
+        } catch (\Illuminate\Database\QueryException $e) {
+            dd($e->errorInfo);
+        }
         if (!$category) {
             return $this->responseRedirectBack('Error occurred while deleting category.', 'error', true, true);
         }
