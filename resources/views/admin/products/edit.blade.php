@@ -1,7 +1,9 @@
 @extends('admin.app')
 @section('title') {{ $pageTitle }} @endsection
 @section('styles')
+
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/js/plugins/dropzone/dist/min/dropzone.min.css') }}"/>
+
 @endsection
 @section('content')
     <div class="app-title">
@@ -222,7 +224,7 @@
                                         <div class="col-md-3">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <img src="{{ asset('storage/'.$image->full) }}" id="brandLogo" class="img-fluid" alt="img">
+                                                    <img src="{{ asset('storage/'.$image->full) }}" id="image" class="img-fluid" alt="img">
                                                     <a class="card-link float-right text-danger" href="{{ route('admin.products.images.delete', $image->id) }}">
                                                         <i class="fa fa-fw fa-lg fa-trash"></i>
                                                     </a>
@@ -263,7 +265,9 @@
                 autoProcessQueue: false,
             });
             myDropzone.on("queuecomplete", function (file) {
-                window.location.reload();
+                {{--window.location.url("{{ route('admin.products') }}");--}}
+                    window.location.reload();
+
                 showNotification('Completed', 'All product images uploaded', 'success', 'fa-check');
             });
             $('#uploadButton').click(function(){
@@ -290,4 +294,5 @@
             }
         });
     </script>
+
 @endpush

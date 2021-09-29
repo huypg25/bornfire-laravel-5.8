@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/main.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/font-awesome/4.7.0/css/font-awesome.min.css') }}"/>
+    <style>
+        .dz-error-mark{
+            display: none !important;
+        }
+    </style>
 </head>
 <body class="app sidebar-mini rtl">
     @include('admin.partials.header')
@@ -21,6 +26,13 @@
     <script src="{{ asset('backend/js/main.js') }}"></script>
     <script src="{{ asset('backend/js/plugins/pace.min.js') }}"></script>
     @stack('scripts')
-
+    <style>
+        .dz-error-mark{
+            display: none !important;
+        }
+        .dz-success-mark{
+            display: none !important;
+        }
+    </style>
 </body>
 </html>

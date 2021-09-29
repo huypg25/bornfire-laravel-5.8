@@ -81,25 +81,12 @@
                 </main>
                 <aside class="col-sm-3">
                     <a href="{{ route('checkout.cart.clear') }}" class="btn btn-danger btn-block mb-4">Clear Cart</a>
-                    <p class="alert alert-success">Add USD 5.00 of eligible items to your order to qualify for FREE Shipping. </p>
+{{--                    <p class="alert alert-success">Add USD 5.00 of eligible items to your order to qualify for FREE Shipping. </p>--}}
                     <dl class="dlist-align h4">
                         <dt>Total:</dt>
                         <dd class="text-right"><strong>{{ config('settings.currency_symbol') }}{{ \Cart::getSubTotal() }}</strong></dd>
                     </dl>
                     <hr>
-                    <figure class="itemside mb-3">
-                        <aside class="aside"><img src="{{ asset('frontend/images/icons/pay-visa.png') }}"></aside>
-                        <div class="text-wrap small text-muted">
-                            Pay 84.78 AED ( Save 14.97 AED ) By using ADCB Cards
-                        </div>
-                    </figure>
-                    <figure class="itemside mb-3">
-                        <aside class="aside"> <img src="{{ asset('frontend/images/icons/pay-mastercard.png') }}"> </aside>
-                        <div class="text-wrap small text-muted">
-                            Pay by MasterCard and Save 40%.
-                            <br> Lorem ipsum dolor
-                        </div>
-                    </figure>
                     <a href="{{ route('checkout.index') }}" class="btn btn-success btn-lg btn-block">Proceed To Checkout</a>
                 </aside>
             </div>

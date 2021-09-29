@@ -69,9 +69,9 @@ class ProductRepository extends BaseRepository implements ProductContract
             $featured = $collection->has('featured') ? 1 : 0;
             $status = $collection->has('status') ? 1 : 0;
             $merge = $collection->merge(compact('status', 'featured'));
-
             $product = new Product($merge->all());
-//            dd($product);
+//            dd( $product->categories());
+//            dd($params['categories']);
             $product->save();
 
             if ($collection->has('categories')) {
